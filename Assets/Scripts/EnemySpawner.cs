@@ -6,15 +6,27 @@ public class EnemySpawner : MonoBehaviour
     public GameObject smartEnemy;
     public GameObject fastEnemy;
 
-    void Start()
+    // x için -4.46 ile 4.46 arasında, z için -4.93 ile 3.16 arasında
+    private Vector3 GetRandomPosition()
     {
-        SpawnEnemy(slowEnemy, new Vector3(-5, 0, 0));
-        SpawnEnemy(smartEnemy, new Vector3(0, 0, 0));
-        SpawnEnemy(fastEnemy, new Vector3(5, 0, 0));
+        float x = Random.Range(-4.46f, 4.46f);  // x aralığı
+        float z = Random.Range(-4.93f, 3.16f);  // z aralığı
+        float y = -1.09f;  // y sabit
+
+        return new Vector3(x, y, z);
     }
 
-    private void SpawnEnemy(GameObject enemy, Vector3 position)
+    void Start()
     {
-        Instantiate(enemy, position, Quaternion.identity);
+        // Düşmanları rastgele konumlarda spawn ediyoruz.
+        SpawnEnemy(slowEnemy);
+        SpawnEnemy(smartEnemy);
+        SpawnEnemy(fastEnemy);
+    }
+
+    private void SpawnEnemy(GameObject enemy)
+    {
+        Vector3 randomPosition = GetRandomPosition();
+        Instantiate(enemy, randomPosition, Quaternion.identity);
     }
 }
