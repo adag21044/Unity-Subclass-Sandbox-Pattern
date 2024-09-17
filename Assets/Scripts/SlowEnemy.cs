@@ -1,6 +1,6 @@
 public class SlowEnemy : Enemy
 {
-    private void Start()
+    protected override void Start()
     {
         moveSpeed = 0.25f;
         base.Start();

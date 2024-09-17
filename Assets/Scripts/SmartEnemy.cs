@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class SmartEnemy : Enemy
 {
-    private void Start()
+    protected override void Start()
     {
         moveSpeed = 0.5f;
         base.Start();
     }
 
-    void Update()
+    private void Update()
     {
         Move();  // Düşman, her frame oyuncuya doğru hareket eder
     }

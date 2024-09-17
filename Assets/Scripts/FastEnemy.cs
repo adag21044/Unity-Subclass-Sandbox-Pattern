@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FastEnemy : Enemy
 {
-    private void Start()
+    protected override void Start()
     {
         moveSpeed = 2.5f;
         base.Start();
