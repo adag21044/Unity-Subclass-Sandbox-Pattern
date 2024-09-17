@@ -4,9 +4,15 @@ public class SmartEnemy : Enemy
 {
     private void Start()
     {
-        moveSpeed = 2f;
+        moveSpeed = 0.5f;
         base.Start();
     }
+
+    void Update()
+    {
+        Move();  // Düşman, her frame oyuncuya doğru hareket eder
+    }
+
     public override void Move()
     {
         if(playerTransform != null)

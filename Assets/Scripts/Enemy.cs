@@ -19,5 +19,14 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Player has been destroyed");
+        }
+    }
+
     public abstract void Move();
 }

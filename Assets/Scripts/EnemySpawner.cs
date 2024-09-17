@@ -6,11 +6,11 @@ public class EnemySpawner : MonoBehaviour
     public GameObject smartEnemy;
     public GameObject fastEnemy;
 
-    // x için -4.46 ile 4.46 arasında, z için -4.93 ile 3.16 arasında
+    
     private Vector3 GetRandomPosition()
     {
-        float x = Random.Range(-4.46f, 4.46f);  // x aralığı
-        float z = Random.Range(-4.93f, 3.16f);  // z aralığı
+        float x = Random.Range(-12.52f, 12.52f);  // x aralığı
+        float z = Random.Range(-6f, 6f);  // z aralığı
         float y = -1.09f;  // y sabit
 
         return new Vector3(x, y, z);
